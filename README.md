@@ -1,27 +1,69 @@
-# SQL-Server-to-GCP-BigQuery-
-data migration from ms sql server to gcp bigquery 
 
- Python program designed to export data from a SQL Server database to Google Cloud Storage (GCS) and then transfer it to BigQuery. Here's a brief overview of what the script does:
 
-1. **Importing Libraries**: The script imports necessary libraries including `tkinter` for GUI, `filedialog` for file selection, `pyodbc` for SQL Server connection, `csv` for CSV file operations, `os` for operating system operations, and Google Cloud libraries for interacting with GCS and BigQuery.
+# SQL Server to GCP BigQuery Data Migration
 
-2. **Global Variables**: It defines some global variables including `JSON_AUTH_FILE_PATH` and `stop_transfer`.
+This Python script facilitates the migration of data from a Microsoft SQL Server database to Google Cloud Platform's BigQuery. It exports data to Google Cloud Storage (GCS) first and then transfers it to BigQuery. Below is an overview of its functionality and setup.
 
-3. **Functions**:
-   - `append_to_console`: Appends messages to the console output.
-   - `get_current_datetime`: Gets the current date and time.
-   - `export_to_gcs`: Exports data from SQL Server to GCS.
-   - `transfer_to_bigquery`: Transfers data from GCS to BigQuery.
-   - `validate_ui_fields`: Validates the user interface fields.
-   - `export_and_transfer_button_click`: Initiates the export and transfer process when the corresponding button is clicked.
-   - `select_json_file`: Allows the user to select a JSON authentication file.
-   - `stop_button_click`: Stops the data transfer process.
-   - `save_ui_data`: Saves the user interface data to a text file.
+## Overview
 
-4. **Main GUI Setup**:
-   - It creates a main window using `tkinter`.
-   - Sets up labels, entry fields, buttons, and console output for user interaction and feedback.
+The script provides a graphical user interface (GUI) using tkinter for:
 
-5. **Event Loop**: Starts the GUI event loop to handle user interactions.
+- Setting SQL Server connection details.
+- Specifying GCS bucket, BigQuery dataset, and GCP project ID.
+- Initiating and monitoring the data export and transfer processes.
+- Logging progress and messages to the console.
 
-This script provides a graphical interface for users to specify SQL Server details, GCS bucket, BigQuery dataset, and project ID. It then exports data from SQL Server to GCS and transfers it to BigQuery. The console output provides feedback on the progress of the export and transfer operations. Additionally, it saves UI data to a text file for record-keeping.
+## Features
+
+### Libraries Used
+
+- **tkinter**: GUI toolkit for Python.
+- **pyodbc**: SQL Server connection library.
+- **csv**: Handling CSV files.
+- **os**: Operating system operations.
+- **Google Cloud Libraries**: Interacting with GCS and BigQuery.
+
+### Functions
+
+- **append_to_console**: Appends messages to the GUI console output.
+- **get_current_datetime**: Retrieves the current date and time.
+- **export_to_gcs**: Exports SQL Server data to GCS.
+- **transfer_to_bigquery**: Transfers data from GCS to BigQuery.
+- **validate_ui_fields**: Validates user interface fields.
+- **export_and_transfer_button_click**: Initiates export and transfer processes.
+- **select_json_file**: Allows selection of a JSON authentication file.
+- **stop_button_click**: Stops the data transfer process.
+- **save_ui_data**: Saves user interface data to a text file.
+
+## Usage
+
+1. **Setup**:
+   - Install necessary Python libraries (`pyodbc`, `google-cloud-storage`, `google-cloud-bigquery`).
+   - Ensure you have a Google Cloud project with BigQuery and Cloud Storage enabled.
+
+2. **Configuration**:
+   - Modify `JSON_AUTH_FILE_PATH` and other global variables as needed.
+   - Set SQL Server connection details and GCP credentials in the GUI.
+
+3. **Execution**:
+   - Run the script (`sqltobig1.py`) to open the GUI.
+   - Enter details in the GUI fields.
+   - Click the "Export and Transfer" button to start the migration process.
+
+4. **Console Output**:
+   - Monitor progress and messages in the GUI console.
+   - Use the "Stop" button to halt the process if necessary.
+
+## Additional Notes
+
+- This project assumes familiarity with Python, SQL Server, Google Cloud Platform, and BigQuery.
+- Ensure proper authentication and authorization for GCP services.
+- For issues or improvements, please submit a GitHub issue or pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to adjust the sections and details based on additional features or specific configurations relevant to your implementation. This README provides a clear overview of the project's purpose, setup instructions, features, and usage guidelines.
