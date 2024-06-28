@@ -60,6 +60,11 @@ The script provides a graphical user interface (GUI) using tkinter for:
 - Ensure proper authentication and authorization for GCP services.
 - For issues or improvements, please submit a GitHub issue or pull request.
 
+## screenshot
+![image](https://github.com/Prathap2000/SQL-Server-to-GCP-BigQuery-/assets/83679951/e75e3ccb-7a8e-4efd-89fc-c26c65ab0144)
+
+  
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
